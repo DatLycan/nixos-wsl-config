@@ -4,5 +4,5 @@
 2. Run:
 
 ```bash
-sudo nix-shell -p git jq --run "curl -L https://raw.githubusercontent.com/DatLycan/nixos-wsl-config/stable/install.sh | sh"
+sudo nix-shell -p git jq --run "curl -L https://raw.githubusercontent.com/DatLycan/nixos-wsl-config/stable/install.sh | sudo sh -s -- <username> <target_config>"
 ```
