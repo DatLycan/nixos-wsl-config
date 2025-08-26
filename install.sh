@@ -27,6 +27,9 @@ fi
 
 rm -rf "$NIXOS_DIR"
 git clone "$GIT_REPO" "$NIXOS_DIR"
+rm -rf "$NIXOS_DIR"/.git
+rm "$NIXOS_DIR"/README.md
+rm "$NIXOS_DIR"/install.sh
 
 sed -i "s/datlycan/$USER_NAME/g" "$NIXOS_DIR/settings.nix"
 
