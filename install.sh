@@ -17,7 +17,7 @@ GIT_FLAKE="github:Datlycan/nixos-wsl-config"
 USER_NAME="$1"
 TARGET_CONFIG="$2"
 
-AVAILABLE_CONFIGS=$(nix flake show --json "$GIT_FLAKE" --no-write-lock-file 2> /dev/null | jq -r '.nixosConfigurations | keys[]')
+AVAILABLE_CONFIGS=$(nix flake show --json "$GIT_FLAKE" --no-write-lock-file | jq -r '.nixosConfigurations | keys[]')
 
 if ! echo "$AVAILABLE_CONFIGS" | grep -qx "$TARGET_CONFIG"; then
     echo -e "Invalid configuration: $TARGET_CONFIG\n" >&2
